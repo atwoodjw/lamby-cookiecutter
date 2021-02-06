@@ -50,6 +50,8 @@ cp ./lambify/app.rb "${PROJECT_FOLDER}/app.rb"
 #
 cp ./lambify/Dockerfile "${PROJECT_FOLDER}/Dockerfile"
 cp ./lambify/Dockerfile-build "${PROJECT_FOLDER}/Dockerfile-build"
+cp ./lambify/docker-compose-dev.yml "${PROJECT_FOLDER}/docker-compose-dev.yml"
+cp ./lambify/docker-sync.yml "${PROJECT_FOLDER}/docker-sync.yml"
 cp ./lambify/docker-compose.yml "${PROJECT_FOLDER}/docker-compose.yml"
 
 # We replace the Gemfile in whole for a few reasons:

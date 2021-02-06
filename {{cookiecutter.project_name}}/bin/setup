@@ -3,6 +3,10 @@ set -e
 
 if [[ "$OSTYPE" == *"darwin"* ]]; then
   export SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
+
+  gem install docker-sync
+  docker-sync start
+  docker-compose up --detach
 fi
 
 docker-compose run \

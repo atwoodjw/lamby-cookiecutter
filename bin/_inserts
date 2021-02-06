@@ -17,16 +17,19 @@ insert_file_over_pattern () {
 #
 sed --in-place \
   's/RenameMe/{% include "_cctmp\/class_name.txt" %}/' \
+  app/views/layouts/application.html.erb
+
+sed --in-place \
+  's/RenameMe/{% include "_cctmp\/class_name.txt" %}/' \
   config/application.rb
 
-# Create a simple welcome to Lamby/Rails index page. To do
-# this we need a simple starter route, view layout and template.
-# One important part of this is exercising the JS/CSS assets.
-#
-cp ../inserts/config/routes.rb config/routes.rb
-cp ../inserts/app/views/layouts/application.html.erb app/views/layouts/application.html.erb
-mkdir -p app/views/application
-cp ../inserts/app/views/application/index.html.erb app/views/application/index.html.erb
+sed --in-place \
+  's/rename_me/{% include "_cctmp\/file_name.txt" %}/' \
+  app/config/environments/production.rb
+
+sed --in-place \
+  's/rename-me/{% include "_cctmp\/dash_name.txt" %}/' \
+  package.json
 
 # Much like Heroku, most Rails applications can serve static
 # assets without the complexity of an S3-backed asset host.
@@ -48,8 +51,3 @@ insert_file_over_pattern 'config/environments/production.rb' '^end'
 # - Lamby leverages Docker and we build gems into `/vendor/bundle-dev`
 #
 cat ../inserts/.gitignore >> ./.gitignore
-
-# Put in a nice README. Please keep this file somewhat in sync with
-# the root README for details like what this project has installed.
-#
-cp ../inserts/README.md README.md

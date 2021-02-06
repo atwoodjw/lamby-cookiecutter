@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-VERSION="6.0.3.4"
+VERSION="6.1.1"
 PATH=/var/runtime/bin/:$PATH
 PROJECT_FOLDER="{{cookiecutter.project_name}}"
 
@@ -12,16 +12,18 @@ rm -rf "$PROJECT_FOLDER"
 
 gem install rails -v $VERSION --no-document
 
-rails _"$VERSION"_ new rename_me \
+rails _"$VERSION"_ new rename_me --database=postgresql \
   --skip-action-mailer \
   --skip-action-mailbox \
   --skip-action-text \
-  --skip-active-record \
   --skip-active-storage \
   --skip-puma \
   --skip-action-cable \
   --skip-spring \
   --skip-listen \
-  --skip-bootsnap
+  --skip-test \
+  --skip-system-test \
+  --skip-bootsnap \
+  --webpack=stimulus
 
 mv "rename_me" "$PROJECT_FOLDER"

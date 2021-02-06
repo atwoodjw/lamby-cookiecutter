@@ -1,0 +1,4 @@
+version: '2'
+syncs:
+  {% include "_cctmp/dash_name.txt" %}-sync:
+    src: '.'

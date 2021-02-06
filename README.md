@@ -52,3 +52,6 @@ This starter project is 100% scripted within Docker using the scripts in the `bi
 ## Code of Conduct
 
 Everyone interacting in the Lamby project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/customink/lamby/blob/master/CODE_OF_CONDUCT.md).
+
+## Links
+https://dev.to/aws-heroes/serverless-docker-patterns-4g1p
